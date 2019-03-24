@@ -1,8 +1,7 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-
-const baseConfig = {
+module.exports = {
     entry: {
         main: './src/index.js'
     },
@@ -32,6 +31,4 @@ const baseConfig = {
           ]
     },
     plugins: [new HtmlWebpackPlugin()]
-};
-
-module.exports = baseConfig;
+}
