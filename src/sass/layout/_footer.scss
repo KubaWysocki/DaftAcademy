@@ -5,17 +5,17 @@ footer {
     position: absolute;
     bottom: 0;
     justify-content: space-between;
-    .mail{
-        &::before {
-            content: 'Say hello!  - ';
-            color: $grayText;
-        }
+}
+.mail{
+    &::before {
+        content: 'Say hello!  - ';
+        color: $grayText;
     }
-    .socialMedia{
-        &::before {
-            content: 'Follow us';
-            color: $grayText;
-            margin-right: .7em;
-        }
+}
+.socialMedia{
+    &::before {
+        content: 'Follow us';
+        color: $grayText;
+        margin-right: .7em;
     }
 }
