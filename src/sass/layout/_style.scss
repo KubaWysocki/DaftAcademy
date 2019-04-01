@@ -1,0 +1,25 @@
+html, body {
+    height: 100%;
+}
+h1 {
+    border: 2px solid black;
+    display: inline-block;
+    padding: .5em 1em;
+    margin: .2em 6%;
+    height: 2em;
+    font-size: 2em;
+    z-index: $zindex-logo;
+}
+.page {
+    position: relative;
+    width: 92%;
+    height: 88%;
+    background-color: #dddddd50;
+    top: -2.2em;
+    left: 4%;
+    padding-top: 10%; 
+    overflow: hidden;
+    @media (orientation: landscape) {
+        padding-top: 3%;
+    }
+}

@@ -1,5 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
     entry: {
@@ -9,13 +11,18 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve('./build')
     },
+    mode: 'development',
     module: {
         rules: [
             {
-              test: /\.css$/,
+              test: /\.s(a|c)ss$/,
               use: [
-                { loader: 'style-loader' },
-                { loader: 'css-loader' }
+                isProduction
+                ? MiniCssExtractPlugin.loader
+                : { loader: 'style-loader', options: { sourceMap: true } },
+                { loader: 'css-loader', options: { sourceMap: isProduction } },
+                { loader: 'postcss-loader', options: { sourceMap: isProduction } },
+                { loader: 'sass-loader', options: { sourceMap: isProduction } }
               ]
             },
             {
@@ -30,5 +37,13 @@ module.exports = {
             }
           ]
     },
-    plugins: [new HtmlWebpackPlugin()]
+    plugins: [
+      new HtmlWebpackPlugin({
+        hash: true,
+        title: 'Daftacademy Drink Base',
+        template: './src/index.html',
+        filename: './index.html'
+      }),
+      new MiniCssExtractPlugin()
+    ]
 }

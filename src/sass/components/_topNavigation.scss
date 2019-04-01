@@ -1,0 +1,20 @@
+.topNavigation {
+    ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        @media (orientation: landscape) {
+            padding: 0 10%; 
+        }
+    }
+    li {
+        color: $grayText;
+        display: inline-block;
+        margin: 0 2% 1% 2%;
+        &:first-child {
+            text-decoration: underline;
+            color: black;
+        }
+    }
+}
