@@ -1,6 +1,11 @@
 * {
 	box-sizing: border-box;
 }
+:root {
+	@media (max-width: 350px) {
+		font-size: .9em;
+	}
+}
 html, body {
     height: 100%;
 }
