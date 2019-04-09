@@ -18,6 +18,10 @@
     background-color: rgb(103, 207, 77);
     margin: 2%;
     transition: .3s ease;
+    // clock styles
+        font-size: 3em;
+        text-align: center;
+    //----------------------
     &:last-of-type {
         margin-bottom: 20vh;
     }

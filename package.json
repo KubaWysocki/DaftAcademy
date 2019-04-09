@@ -21,6 +21,7 @@
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.3",
     "css-loader": "^2.1.1",
     "node-sass": "^4.11.0",
     "normalize-css": "^2.3.1",
