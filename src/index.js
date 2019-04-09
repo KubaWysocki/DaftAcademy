@@ -1,5 +1,4 @@
 import './sass/main.scss'
-
 function* gen( [ h, m ,s ] ) {
     const clock = document.querySelector('#clock')
     while( true ) {
