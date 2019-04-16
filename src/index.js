@@ -35,8 +35,7 @@ promiseAll([futureSuccess(1), futureSuccess(2), futureSuccess(3)]).then(result =
 });
 
 promiseAll([futureSuccess(1), Promise.reject('X'), futureSuccess(3)])
-    .then((res) => {
-            console.log(res)
+    .then(() => {
             console.log('WAT?! Nie powinno nas tu być..');
     })
     .catch(error => {
