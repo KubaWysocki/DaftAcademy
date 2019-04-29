@@ -5,11 +5,13 @@ import clock from './clock'
 function promiseAll(promises) {
     return new Promise(( resolve, reject ) => {
         const all = []
+        let counter = 0
         if( !promises.length ) resolve([])
         promises.forEach( async ( pro, i ) => {
             await pro.then( res => { 
-                all[i] = res 
-                if(all.length === promises.length) resolve(all)
+                all[i] = res
+                counter++
+                if(counter === promises.length) resolve(all)
             }).catch( err => {
                 reject(err)
             })
